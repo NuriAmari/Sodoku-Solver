@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sodoku Solver</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="app.js" type="text/javascript"></script>
+	</head>
+	<header>
+		<div><h1>Sodoku Solver</h1></div>
+	</header>
+	<body>
+		<div>
+			<form>
+				<table id="sodoku-board" border="1" style="border-collapse: collapse;">
+					<tr class="row" id="r1">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r2">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r3">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r4">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r5">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r6">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r7">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r8">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+					<tr class="row" id="r9">
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+						<td class="column" height="50em" width="50em">
+							<input name="sodoku-square" min="1" max="9" type="number" maxlength="1" value=""></td>
+					</tr>
+				</table>
+				<input type="submit" name="Solve" id="solve-puzzle" >
+			</form>
+		</div>
+	</body>
+	<footer>
+	</footer>
+</html>
