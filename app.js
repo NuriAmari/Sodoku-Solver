@@ -6,52 +6,53 @@ var solution;
 
 var first;
 
-var count = 0;
+var alteredSquares;
 
-$(document).ready(function() {
 
-	$("form").submit(function(e) {
+$("form").submit(function(e) {
 
-		data = [];
+	data = [];
 
-		e.preventDefault();
-		puzzleData = $("form").serializeArray();
+	alteredSquares = [];
 
-		var tempRow = [];
+	e.preventDefault();
+	puzzleData = $("form").serializeArray();
 
-		for (var j = 0; j < 9; j++) {
+	var tempRow = [];
 
-			for (var i = 0; i < 9; i++) {
+	for (var j = 0; j < 9; j++) {
 
-				if (puzzleData[(j * 9) + i].value === "") {
+		for (var i = 0; i < 9; i++) {
 
-					tempRow.push(0);
-				}
+			if (puzzleData[(j * 9) + i].value === "") {
 
-				else {
-				
-					tempRow.push(parseInt(puzzleData[(j * 9) + i].value));
-				}
+				tempRow.push(0);
 			}
 
-			data.push(tempRow);
-			tempRow = [];
+			else {
+			
+				tempRow.push(parseInt(puzzleData[(j * 9) + i].value));
+			}
 		}
 
-		running = true;
+		data.push(tempRow);
+		tempRow = [];
+	}
 
-		first = firstEmpty(data);
+	running = true;
 
-		solution = solveSodoku(1,0,0, false);
+	first = firstEmpty(data);
 
-		while (running) {
+	solution = solveSodoku(1,0,0, false);
 
-			update();
-		}
-	});
+	
+
+	while (running) {
+
+		update();
+	}
 });
 
-var alteredSquares = [];
 
 
 var solveSodoku = function(value, x, y, backTracking) {
@@ -214,17 +215,8 @@ var update = function() {
 		}
 
 		else {
-			//var tempSolution = 		
+		
 			solution = solveSodoku(solution.value, solution.x, solution.y, solution.backTracking);
-	
-			if (solution.value === 0) {
-
-				console.log("AHHHH");
-			}
-			/*solution.value = tempSolution.value;
-			solution.x = tempSolution.x;
-			solution.y = tempSolution.y;
-			solution.backTracking = tempSolution.backTracking;*/
 		}
 	}
 }
@@ -246,8 +238,12 @@ var insertSolution = function(answer) {
 			columnNumber = j + 1;
 
 			selector = "#r" + rowNumber + " td" + ":nth-child(" + columnNumber + ")" + " input";
+			
+			//console.log(selector);
 
-			$(selector).attr("value", answer[i][j].toString());
+			document.querySelector(selector).value = answer[i][j].toString();
+
+			//$(selector).attr("value", answer[i][j].toString());
 
 		}
 	}
